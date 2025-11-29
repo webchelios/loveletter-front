@@ -1,6 +1,7 @@
 import './App.css'
 import { Footer } from './components/Footer'
 import { NavBar } from './components/NavBar'
+import { Movies } from './presentation/Movies'
 
 export const App = () => {
 
@@ -10,7 +11,7 @@ export const App = () => {
         <NavBar />
       </header>
       <main>
-
+        <Movies />
       </main>
       <Footer />
     </>

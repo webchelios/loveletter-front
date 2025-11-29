@@ -1,4 +1,4 @@
-import { Movie } from "../interfaces/Movie.interface";
+import { type Movie } from "../interfaces/Movie.interface";
 
 export const getMovies = async (): Promise<Movie[]> => {
     const response = await fetch("http://localhost:3000/movies");
