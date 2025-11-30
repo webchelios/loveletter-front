@@ -10,7 +10,7 @@ export const getMovies = async (): Promise<Movie[]> => {
 
         return await response.json();
     } catch (error) {
-        console.error("Error en [getMovies.ts]:", error);
+        console.error("Error en [get-movies.ts]:", error);
         throw error;
     }
 };
