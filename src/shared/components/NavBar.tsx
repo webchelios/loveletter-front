@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import './NavBar.css'
 import { PrivateRoute } from '../../router/PrivateRoute'
 import { useContext } from 'react';
-import { AuthContext } from '../../auth/context/authContext';
+import { AuthContext } from '../../auth/context/AuthContext';
 
 export const NavBar = () => {
     const { logout } = useContext(AuthContext);
@@ -14,7 +14,7 @@ export const NavBar = () => {
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/peliculas">Peliculas</Link></li>
                 <li><Link to="/directores">Directores</Link></li>
-                <li><Link to="/cuenta">Cuenta</Link></li>
+                <li><Link to="/login">Iniciar Sesión</Link></li>
                 <PrivateRoute>
                     <li>Dashboard</li>
                 </PrivateRoute>

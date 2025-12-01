@@ -3,8 +3,9 @@ import { MoviesPage } from "../presentation/MoviesPage";
 import { HomePage } from "../presentation/HomePage";
 import { NotFoundPage } from "../presentation/NotFoundPage";
 import { DirectorsPage } from "../presentation/DirectorsPage";
-import { UsersPage } from "../presentation/UsersPage";
+
 import { MainLayout } from "../shared/layouts/MainLayout";
+import { LoginPage } from "../presentation/LoginPage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -24,8 +25,8 @@ export const appRouter = createBrowserRouter([
                 element: <DirectorsPage />,
             },
             {
-                path: 'cuenta',
-                element: <UsersPage />
+                path: 'login',
+                element: <LoginPage />
             },
             {
                 path: '*',

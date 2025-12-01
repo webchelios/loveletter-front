@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 
 interface AuthContextProps {
-    isAuthenticated: boolean;
     token: string | null;
-    login: (token: string) => void;
+    isAuthenticated: boolean;
+    login: (email: string, password: string) => Promise<void>;
     logout: () => void;
 }
 
@@ -12,20 +12,34 @@ export const AuthContext = createContext<AuthContextProps>({} as AuthContextProp
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
 
-    const login = (jwt: string) => {
-        localStorage.setItem("token", jwt);
-        setToken(jwt);
+    const login = async (email: string, password: string) => {
+        const response = await fetch("http://localhost:3000/users/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        if (!response.ok) {
+            throw new Error("Credenciales inválidas");
+        }
+
+        const data = await response.json();
+        setToken(data.token);
+        localStorage.setItem("token", data.token);
     };
 
     const logout = () => {
-        localStorage.removeItem("token");
         setToken(null);
+        localStorage.removeItem("token");
     };
 
-    const isAuthenticated = !!token;
-
     return (
-        <AuthContext.Provider value={{ isAuthenticated, token, login, logout }}>
+        <AuthContext.Provider value={{
+            token,
+            isAuthenticated: Boolean(token),
+            login,
+            logout
+        }}>
             {children}
         </AuthContext.Provider>
     );

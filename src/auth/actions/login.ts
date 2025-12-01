@@ -1,5 +1,5 @@
 export const login = async (email: string, password: string) => {
-    const res = await fetch("http://localhost:3000/login", {
+    const res = await fetch("http://localhost:3000/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -8,7 +8,7 @@ export const login = async (email: string, password: string) => {
     if (!res.ok) throw new Error("Credenciales incorrectas");
 
     const data = await res.json();
-    localStorage.setItem("token", data.token); // 👈 guardar JWT
+    localStorage.setItem("token", data.token);
 
     return data;
 };
