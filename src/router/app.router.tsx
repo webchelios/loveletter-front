@@ -8,7 +8,9 @@ import { RegisterPage } from "../auth/presentation/RegisterPage";
 import { DirectorsPage } from "../directors/presentation/DirectorsPage";
 import { UsersPage } from "../auth/presentation/UsersPage";
 import { AdminPage } from "../admin/presentation/AdminPage";
-import { UserAdminPage } from "../admin/presentation/UserAdminPage";
+import { UserAdminPage } from "../admin/users/presentation/UserAdminPage";
+import { EditUserPage } from "../admin/users/presentation/EditUserPage";
+
 
 export const appRouter = createBrowserRouter([
     {
@@ -46,6 +48,10 @@ export const appRouter = createBrowserRouter([
             {
                 path: 'administracion/usuarios',
                 element: <UserAdminPage />
+            },
+            {
+                path: 'administracion/usuarios/editar/:id',
+                element: <EditUserPage />
             },
             {
                 path: '*',

@@ -16,12 +16,16 @@ export const AuthContext = createContext({} as AuthContextProps);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
+
     const storedUser = localStorage.getItem("user");
     const storedAdmin = localStorage.getItem("isAdmin");
 
     const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
     const [authUser, setAuthUser] = useState<User | null>(storedUser ? JSON.parse(storedUser) : null);
     const [isAdmin, setIsAdmin] = useState<boolean>(storedAdmin ? JSON.parse(storedAdmin) : false);
+
+
+
 
     const login = async (email: string, password: string) => {
         const data = await loginAction(email, password);
@@ -45,6 +49,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         localStorage.removeItem("isAdmin");
+
     };
 
     const register = async (email: string, password: string, name: string, username: string) => {

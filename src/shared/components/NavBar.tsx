@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import './NavBar.css'
 import { PrivateRoute } from '../../router/PrivateRoute'
 import { useContext } from 'react';
@@ -6,6 +6,12 @@ import { AuthContext } from '../../auth/context/AuthContext';
 
 export const NavBar = () => {
     const { logout, authUser } = useContext(AuthContext);
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        logout()
+        navigate("/")
+    }
 
     return (
         <nav>
@@ -31,7 +37,7 @@ export const NavBar = () => {
                     <>
                         <li><Link to="/usuario">Perfil</Link></li>
                         <li>
-                            <button onClick={logout}>Cerrar sesión</button>
+                            <button onClick={handleLogout}>Cerrar sesión</button>
                         </li>
                     </>
                 )}
