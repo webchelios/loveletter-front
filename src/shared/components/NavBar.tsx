@@ -29,7 +29,7 @@ export const NavBar = () => {
 
                 {authUser && (
                     <>
-                        <li><p>Hola {authUser.username}</p></li>
+                        <li><Link to="/usuario">Perfil</Link></li>
                         <li>
                             <button onClick={logout}>Cerrar sesión</button>
                         </li>

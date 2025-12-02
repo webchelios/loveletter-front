@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../auth/context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router";
 
 export const RegisterPage = () => {
     const [email, setEmail] = useState("");
@@ -8,6 +9,8 @@ export const RegisterPage = () => {
     const [username, setUsername] = useState("")
 
     const { register, login } = useContext(AuthContext);
+
+    const navigate = useNavigate()
 
     const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(event.target.value)
@@ -32,7 +35,7 @@ export const RegisterPage = () => {
             await register(email, password, name, username);
             await login(email, password);
 
-            console.log("Usuario registrado y logueado");
+            navigate("/usuario")
         } catch (error) {
             console.error(error);
             alert("Error al registrar");

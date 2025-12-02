@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router";
-import { MoviesPage } from "../presentation/MoviesPage";
-import { HomePage } from "../presentation/HomePage";
-import { NotFoundPage } from "../presentation/NotFoundPage";
-import { DirectorsPage } from "../presentation/DirectorsPage";
+import { MoviesPage } from "../movies/presentation/MoviesPage";
+import { HomePage } from "../auth/presentation/HomePage";
+import { NotFoundPage } from "../shared/presentation/NotFoundPage";
 
 import { MainLayout } from "../shared/layouts/MainLayout";
-import { LoginPage } from "../presentation/LoginPage";
-import { RegisterPage } from "../presentation/RegisterPage";
+import { LoginPage } from "../auth/presentation/LoginPage";
+import { RegisterPage } from "../auth/presentation/RegisterPage";
+import { DirectorsPage } from "../directors/presentation/DirectorsPage";
+import { UsersPage } from "../auth/presentation/UsersPage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ export const appRouter = createBrowserRouter([
             {
                 path: 'registrarse',
                 element: <RegisterPage />
+            },
+            {
+                path: 'usuario',
+                element: <UsersPage />
             },
             {
                 path: '*',

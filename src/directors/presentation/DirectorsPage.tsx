@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import type { Director } from "../directors/interfaces/Director.interface";
-import { getDirectors } from "../directors/actions/get-directors";
-import { DirectorList } from "../directors/components/DirectorList";
-import { SearchDirector } from "../directors/components/SearchDirector";
-import { searchDirectors } from "../directors/actions/search-directors";
+import { getDirectors } from "../actions/get-directors";
+import { searchDirectors } from "../actions/search-directors";
+import { SearchDirector } from "../components/SearchDirector";
+import { DirectorList } from "../components/DirectorList";
+import type { Director } from "../interfaces/Director.interface";
+
 
 export const DirectorsPage = () => {
     const [directors, setDirectors] = useState<Director[]>([]);

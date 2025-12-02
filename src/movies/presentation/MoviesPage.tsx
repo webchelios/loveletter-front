@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getMovies } from "../movies/actions/get-movies";
-import type { Movie } from "../movies/interfaces/Movie.interface";
-import { MovieList } from "../movies/components/MovieList";
-import { SearchMovie } from "../movies/components/SearchMovie";
-import { searchMovies } from "../movies/actions/search-movies";
+import { getMovies } from "../actions/get-movies";
+import type { Movie } from "../interfaces/Movie.interface";
+import { MovieList } from "../components/MovieList";
+import { SearchMovie } from "../components/SearchMovie";
+import { searchMovies } from "../actions/search-movies";
 
 export const MoviesPage = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
@@ -44,6 +44,11 @@ export const MoviesPage = () => {
             {
                 error && <p>{error}</p>
             }
+
+            {!error && movies.length === 0 && (
+                <p>No hay peliculas</p>
+            )}
+
             {
                 movies.map((movie) => {
 
