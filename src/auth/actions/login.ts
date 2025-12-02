@@ -1,14 +1,20 @@
-export const login = async (email: string, password: string) => {
-    const res = await fetch("http://localhost:3000/users/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-    });
+import type { LoggedUser } from "../interfaces/user.interface";
 
-    if (!res.ok) throw new Error("Credenciales incorrectas");
+export const loginAction = async (email: string, password: string): Promise<LoggedUser> => {
+    try {
+        const res = await fetch("http://localhost:3000/users/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+        if (!res.ok) throw new Error("Error al ingresar credenciales");
 
-    const data = await res.json();
-    localStorage.setItem("token", data.token);
+        const data = await res.json();
 
-    return data;
+        return data;
+    } catch (error) {
+        console.error("Error en [login.ts]:", error);
+        throw error;
+    }
+
 };

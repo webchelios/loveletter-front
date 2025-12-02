@@ -14,7 +14,8 @@ export const NavBar = () => {
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/peliculas">Peliculas</Link></li>
                 <li><Link to="/directores">Directores</Link></li>
-                <li><Link to="/login">Iniciar Sesión</Link></li>
+                <li><Link to="/loguearse">Iniciar Sesión</Link></li>
+                <li><Link to="/registrarse">Registrarse</Link></li>
                 <PrivateRoute>
                     <li>Dashboard</li>
                 </PrivateRoute>

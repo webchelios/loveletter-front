@@ -6,6 +6,7 @@ import { DirectorsPage } from "../presentation/DirectorsPage";
 
 import { MainLayout } from "../shared/layouts/MainLayout";
 import { LoginPage } from "../presentation/LoginPage";
+import { RegisterPage } from "../presentation/RegisterPage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -25,8 +26,12 @@ export const appRouter = createBrowserRouter([
                 element: <DirectorsPage />,
             },
             {
-                path: 'login',
+                path: 'loguearse',
                 element: <LoginPage />
+            },
+            {
+                path: 'registrarse',
+                element: <RegisterPage />
             },
             {
                 path: '*',
