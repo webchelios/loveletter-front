@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../auth/context/AuthContext';
 
 export const NavBar = () => {
-    const { logout } = useContext(AuthContext);
+    const { logout, authUser } = useContext(AuthContext);
 
     return (
         <nav>
@@ -14,14 +14,28 @@ export const NavBar = () => {
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/peliculas">Peliculas</Link></li>
                 <li><Link to="/directores">Directores</Link></li>
-                <li><Link to="/loguearse">Iniciar Sesión</Link></li>
-                <li><Link to="/registrarse">Registrarse</Link></li>
+
+                {!authUser && (
+                    <>
+                        <li><Link to="/loguearse">Iniciar Sesión</Link></li>
+                        <li><Link to="/registrarse">Registrarse</Link></li>
+                    </>
+                )}
+
+
                 <PrivateRoute>
-                    <li>Dashboard</li>
+                    <li><Link to="/administracion">Panel de administración</Link></li>
                 </PrivateRoute>
 
+                {authUser && (
+                    <>
+                        <li><p>Hola {authUser.username}</p></li>
+                        <li>
+                            <button onClick={logout}>Cerrar sesión</button>
+                        </li>
+                    </>
+                )}
 
-                <button onClick={logout}>Cerrar sesión</button>
             </ul>
         </nav >
     )

@@ -10,7 +10,6 @@ export const loginAction = async (email: string, password: string): Promise<Logg
         if (!res.ok) throw new Error("Error al ingresar credenciales");
 
         const data = await res.json();
-
         return data;
     } catch (error) {
         console.error("Error en [login.ts]:", error);

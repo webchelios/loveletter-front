@@ -1,10 +1,13 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../auth/context/AuthContext";
+import { useNavigate } from "react-router";
 
 export const LoginPage = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const navigate = useNavigate()
 
     const { login } = useContext(AuthContext);
 
@@ -20,21 +23,12 @@ export const LoginPage = () => {
         event.preventDefault();
         try {
             await login(email, password);
-            console.log("Login exitoso");
+            navigate("/peliculas");
         } catch (error) {
             console.error(error);
-            alert("Usuario o contraseña incorrectos");
         }
         setEmail("");
         setPassword("");
-    };
-
-    const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            setEmail("")
-            setPassword("")
-        }
     };
 
     return (
@@ -45,7 +39,6 @@ export const LoginPage = () => {
                 placeholder="Ingresar email"
                 value={email}
                 onChange={onChangeEmail}
-                onKeyDown={onKeyDown}
             />
             <input
                 id="password"
@@ -53,7 +46,6 @@ export const LoginPage = () => {
                 placeholder="Ingresar contraseña"
                 value={password}
                 onChange={onChangePassword}
-                onKeyDown={onKeyDown}
             />
             <button type="submit">Buscar</button>
         </form>

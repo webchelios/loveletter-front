@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../auth/context/AuthContext";
-import { Navigate } from "react-router";
 
 interface PrivateRouteProps {
     children: React.ReactNode;
 }
 
 export const PrivateRoute = ({ children }: PrivateRouteProps) => {
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAdmin } = useContext(AuthContext);
 
-    return isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
+    return isAdmin ? <>{children}</> : <></>;
 };

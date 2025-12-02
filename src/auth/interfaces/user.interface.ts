@@ -1,6 +1,6 @@
 export interface LoggedUser {
     jwToken: string;
-    usuario: User;
+    user: User;
 }
 
 export interface User {
@@ -8,4 +8,6 @@ export interface User {
     username: string;
     name: string;
     email: string;
+    image?: string;
+    role?: string;
 }
