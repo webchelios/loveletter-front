@@ -1,0 +1,30 @@
+.user-profile-container {
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.user-profile-container h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+.user-data {
+    text-align: left;
+    line-height: 1.8;
+}
+
+.user-data p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.user-data strong {
+    color: #111;
+}

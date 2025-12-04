@@ -1,6 +1,27 @@
 .director-container {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 40rem;
-    margin: 1rem auto;
+    border: 1px solid #e0e0e0;
+    padding: 1.8rem 2rem;
+    border-radius: 0.8rem;
+    margin: 1.5rem 0;
+    background-color: #fafafa;
+    transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.director-container:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.director-container h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #222;
+    text-align: center;
+}
+
+.director-container p {
+    margin-top: 0.6rem;
+    font-size: 1.1rem;
+    color: #444;
 }

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './SearchDirector.css'
 
 interface Props {
     searchDirector: (value: string) => void;
@@ -27,7 +28,7 @@ export const SearchDirector = ({ searchDirector }: Props) => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className="search-director-form" onSubmit={onSubmit}>
             <input
                 id="title"
                 type="text"
@@ -38,5 +39,5 @@ export const SearchDirector = ({ searchDirector }: Props) => {
             />
             <button type="submit">Buscar</button>
         </form>
-    )
+    );
 }

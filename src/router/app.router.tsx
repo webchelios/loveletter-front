@@ -7,9 +7,14 @@ import { LoginPage } from "../auth/presentation/LoginPage";
 import { RegisterPage } from "../auth/presentation/RegisterPage";
 import { DirectorsPage } from "../directors/presentation/DirectorsPage";
 import { UsersPage } from "../auth/presentation/UsersPage";
-import { AdminPage } from "../admin/presentation/AdminPage";
+
 import { UserAdminPage } from "../admin/users/presentation/UserAdminPage";
 import { EditUserPage } from "../admin/users/presentation/EditUserPage";
+import { MovieAdminPage } from "../admin/movies/presentation/MovieAdminPage";
+import { CreateDirectorPage } from "../directors/presentation/CreateDirectorPage";
+import { CreateMoviePage } from "../movies/presentation/CreateMoviePage";
+import { AdminPage } from "../admin/shared/presentation/AdminPage";
+import { DirectorAdminPage } from "../admin/directors/presentation/DirectorAdminPage";
 
 
 export const appRouter = createBrowserRouter([
@@ -42,6 +47,14 @@ export const appRouter = createBrowserRouter([
                 element: <UsersPage />
             },
             {
+                path: 'crear-director',
+                element: <CreateDirectorPage />
+            },
+            {
+                path: 'crear-pelicula',
+                element: <CreateMoviePage />
+            },
+            {
                 path: 'administracion',
                 element: <AdminPage />
             },
@@ -52,6 +65,14 @@ export const appRouter = createBrowserRouter([
             {
                 path: 'administracion/usuarios/editar/:id',
                 element: <EditUserPage />
+            },
+            {
+                path: 'administracion/peliculas',
+                element: <MovieAdminPage />
+            },
+            {
+                path: 'administracion/directores',
+                element: <DirectorAdminPage />
             },
             {
                 path: '*',

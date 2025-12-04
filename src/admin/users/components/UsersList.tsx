@@ -1,10 +1,9 @@
 import { useContext } from "react";
-
 import { AuthContext } from "../../../auth/context/AuthContext";
 import { useNavigate } from "react-router";
 import { deleteUser } from "../actions/delete-user";
 import { editUser } from "../actions/edit-user";
-
+import './UsersList.css'
 
 interface Props {
     _id: string;
@@ -29,7 +28,7 @@ export const UsersList = ({ _id, name, username, email, image, role, status, onD
         onDelete(_id)
     }
 
-    const handleEditUser = async () => {
+    const handleEditUser = () => {
         navigate(`/administracion/usuarios/editar/${_id}`)
     }
 
@@ -40,20 +39,22 @@ export const UsersList = ({ _id, name, username, email, image, role, status, onD
 
     return (
         status &&
-        <div style={{ border: '1px solid black', margin: '1rem', padding: '1rem' }}>
-            <p>nombre completo: {name}</p>
-            <p>nombre de usuario: {username}</p>
-            <p>email: {email}</p>
-            <p>imagen: {image ? image : 'No tiene'}</p>
-            <p>rol: {role ? role : 'Es usuario común'}</p>
-            {
-                role !== "admin" && <>
-                    <button onClick={handleEditUser}>Editar</button>
-                    <button onClick={handleDeleteUser}>Eliminar</button>
-                    <button onClick={handleSetAdmin}>Hacer Administrador</button>
-                </>
+        <div className="user-card-admin">
 
-            }
+            <p><strong>Nombre completo:</strong> {name}</p>
+            <p><strong>Nombre de usuario:</strong> {username}</p>
+            <p><strong>Email:</strong> {email}</p>
+            <p><strong>Imagen:</strong> {image ? image : "No tiene"}</p>
+            <p><strong>Rol:</strong> {role ? role : "Usuario común"}</p>
+
+            {role !== "admin" && (
+                <div className="admin-card-actions">
+                    <button className="admin-btn" onClick={handleEditUser}>Editar</button>
+                    <button className="admin-btn admin-delete" onClick={handleDeleteUser}>Eliminar</button>
+                    <button className="admin-btn admin-promote" onClick={handleSetAdmin}>Hacer Administrador</button>
+                </div>
+            )}
+
         </div>
-    )
-}
+    );
+};

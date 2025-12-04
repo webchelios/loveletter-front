@@ -4,6 +4,8 @@ import type { Movie } from "../interfaces/Movie.interface";
 import { MovieList } from "../components/MovieList";
 import { SearchMovie } from "../components/SearchMovie";
 import { searchMovies } from "../actions/search-movies";
+import { Link } from "react-router";
+import "./MoviesPage.css"
 
 export const MoviesPage = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
@@ -38,26 +40,22 @@ export const MoviesPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="movies-container">
             <h1>Películas</h1>
+            <Link to="/crear-pelicula">Crear película</Link>
+
             <SearchMovie searchMovie={searchMovie} />
-            {
-                error && <p>{error}</p>
-            }
 
-            {!error && movies.length === 0 && (
-                <p>No hay peliculas</p>
-            )}
+            {error && <p>{error}</p>}
 
-            {
-                movies.map((movie) => {
+            {!error && movies.length === 0 && <p>No hay películas</p>}
 
-                    if (movie.status) {
-                        return <MovieList key={movie._id} movie={movie} />
-                    }
-                    return null
-                })
-            }
+            {movies.map((movie) => {
+                if (movie.status) {
+                    return <MovieList key={movie._id} movie={movie} />
+                }
+                return null;
+            })}
         </div>
     );
 };

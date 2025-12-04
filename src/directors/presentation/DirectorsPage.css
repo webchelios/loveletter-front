@@ -1,0 +1,38 @@
+.directors-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.directors-container h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.directors-container a {
+    display: inline-block;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.6rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+    width: fit-content;
+    margin: 0 auto;
+    color: black;
+}
+
+.directors-container a:hover {
+    background-color: #f5f5f5;
+    border-color: #bbb;
+}
+
+.directors-container p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #444;
+}

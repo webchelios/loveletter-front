@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './SearchMovie.css'
 
 interface Props {
     searchMovie: (value: string) => void;
@@ -27,7 +28,7 @@ export const SearchMovie = ({ searchMovie }: Props) => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
+        <form className="search-form" onSubmit={onSubmit}>
             <input
                 id="title"
                 type="text"

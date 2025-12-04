@@ -4,6 +4,8 @@ import { searchDirectors } from "../actions/search-directors";
 import { SearchDirector } from "../components/SearchDirector";
 import { DirectorList } from "../components/DirectorList";
 import type { Director } from "../interfaces/Director.interface";
+import { Link } from "react-router";
+import './DirectorsPage.css'
 
 
 export const DirectorsPage = () => {
@@ -39,25 +41,24 @@ export const DirectorsPage = () => {
     }, []);
 
     return (
-        <div>
+        <div className="directors-container">
             <h1>Directores</h1>
+
+            <Link to="/crear-director">Crear director</Link>
+
             <SearchDirector searchDirector={searchDirector} />
-            {
-                error && <p>{error}</p>
-            }
+
+            {error && <p>{error}</p>}
 
             {!error && directors.length === 0 && (
                 <p>No hay directores</p>
             )}
 
-            {
-                directors.map((director) => {
-                    if (director.status) {
-                        return <DirectorList key={director._id} director={director} />
-                    }
-                    return null;
-                })
-            }
+            {directors.map((director) =>
+                director.status ? (
+                    <DirectorList key={director._id} director={director} />
+                ) : null
+            )}
         </div>
     );
 };

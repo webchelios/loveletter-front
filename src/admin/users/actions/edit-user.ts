@@ -1,4 +1,6 @@
-export const editUser = async (id: string, data: any, token: string) => {
+import type { EditUserForm } from "../presentation/EditUserPage";
+
+export const editUser = async (id: string, data: EditUserForm, token: string) => {
 
     const res = await fetch(`http://localhost:3000/users/${id}`, {
         method: "PUT",

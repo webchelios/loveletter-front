@@ -1,0 +1,56 @@
+.edit-user-page {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background: #fff5f5;
+    border: 2px solid #ff3b3b;
+}
+
+.edit-user-page h1 {
+    text-align: center;
+    color: #c40000;
+    margin-bottom: 20px;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-form label {
+    font-weight: bold;
+    color: #b10000;
+}
+
+.admin-form input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #d8d8d8;
+    font-size: 15px;
+}
+
+.admin-btn {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: #ff3b3b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.admin-btn:hover {
+    background: #d60000;
+}
+
+.error {
+    color: #ff0000;
+    font-size: 13px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}

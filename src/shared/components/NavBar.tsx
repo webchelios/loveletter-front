@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import './NavBar.css'
 import { PrivateRoute } from '../../router/PrivateRoute'
 import { useContext } from 'react';
@@ -15,27 +15,27 @@ export const NavBar = () => {
 
     return (
         <nav>
-            <h1><Link to="/">Loveletter</Link></h1>
+            <h1><NavLink to="/"><span className='love-font'>Love</span>letter</NavLink></h1>
             <ul>
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/peliculas">Peliculas</Link></li>
-                <li><Link to="/directores">Directores</Link></li>
+                <li><NavLink to="/">Inicio</NavLink></li>
+                <li><NavLink to="/peliculas">Peliculas</NavLink></li>
+                <li><NavLink to="/directores">Directores</NavLink></li>
 
                 {!authUser && (
                     <>
-                        <li><Link to="/loguearse">Iniciar Sesión</Link></li>
-                        <li><Link to="/registrarse">Registrarse</Link></li>
+                        <li><NavLink to="/loguearse">Iniciar Sesión</NavLink></li>
+                        <li><NavLink to="/registrarse">Registrarse</NavLink></li>
                     </>
                 )}
 
 
                 <PrivateRoute>
-                    <li><Link to="/administracion">Panel de administración</Link></li>
+                    <li><NavLink to="/administracion">Panel de administración</NavLink></li>
                 </PrivateRoute>
 
                 {authUser && (
                     <>
-                        <li><Link to="/usuario">Perfil</Link></li>
+                        <li><NavLink to="/usuario">Perfil</NavLink></li>
                         <li>
                             <button onClick={handleLogout}>Cerrar sesión</button>
                         </li>

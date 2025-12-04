@@ -1,0 +1,40 @@
+/* HomePage.css */
+
+.home-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.home-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.home-container p {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    color: #444;
+}
+
+.home-container a {
+    display: inline-block;
+    margin: 0.5rem auto;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.6rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+    color: black;
+}
+
+.home-container a:hover {
+    background-color: #f5f5f5;
+    border-color: #bbb;
+}

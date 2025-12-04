@@ -1,4 +1,4 @@
-import type { User } from "../../auth/interfaces/user.interface";
+import type { User } from "../../../auth/interfaces/user.interface";
 
 export const getUserById = async (id: string): Promise<User> => {
     try {

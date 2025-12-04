@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { MoviesList } from "../../components/MoviesList"
 import { getMovies } from "../../../movies/actions/get-movies"
 import type { Movie } from "../../../movies/interfaces/Movie.interface"
+import { MoviesList } from "../components/MoviesList"
 
 export const MovieAdminPage = () => {
 
@@ -12,6 +12,10 @@ export const MovieAdminPage = () => {
         setMovies(allMovies)
     }
 
+    const handleDelete = async (id: string) => {
+        setMovies(prev => prev.filter(movie => movie._id !== id));
+    }
+
     useEffect(() => {
         handleGetMovies()
     }, [])
@@ -19,7 +23,11 @@ export const MovieAdminPage = () => {
     return (
         <div>
             <h1>Listado</h1>
-            <MoviesList movies={movies} />
+            {
+                movies.map((movie) => (
+                    <MoviesList key={movie._id} onDelete={handleDelete} {...movie} />
+                ))
+            }
         </div>
     )
 }

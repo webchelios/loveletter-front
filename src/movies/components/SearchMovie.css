@@ -1,0 +1,41 @@
+/* SearchMovie.css */
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.search-form input {
+    padding: 0.9rem 1.2rem;
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.6rem;
+    width: 260px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-form input:focus {
+    outline: none;
+    border-color: #bbb;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-form button {
+    padding: 0.9rem 1.6rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.search-form button:hover {
+    background-color: #e5e5e5;
+}
+
+.search-form button:active {
+    transform: scale(0.97);
+}
