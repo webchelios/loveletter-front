@@ -13,6 +13,7 @@
     flex-direction: column;
     gap: 12px;
     border: 1px solid #ddd;
+    animation: pop .5s ease;
 }
 
 .register-form input {
@@ -21,10 +22,17 @@
     border: 1px solid #ccc;
 }
 
+.register-form input:focus {
+    border-color: #e24a4a;
+    box-shadow: 0 0 5px rgba(226, 74, 74, 0.3);
+    outline: none;
+}
+
+
 .register-form button {
     padding: 10px;
     border: none;
-    background: #4a90e2;
+    background-color: #ececec;
     color: white;
     border-radius: 6px;
     cursor: pointer;
@@ -34,4 +42,16 @@
     font-size: 0.85rem;
     color: red;
     margin-top: -8px;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

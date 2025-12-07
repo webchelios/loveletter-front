@@ -15,8 +15,8 @@
 }
 
 .search-director-form input:focus {
-    border-color: #858585;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    border-color: #e24a4a;
+    box-shadow: 0 0 5px rgba(226, 74, 74, 0.3);
     outline: none;
 }
 
