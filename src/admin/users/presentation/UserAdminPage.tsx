@@ -3,6 +3,7 @@ import type { User } from "../../../auth/interfaces/user.interface";
 import { getUsers } from "../actions/get-users";
 import { UsersList } from "../components/UsersList";
 import "./UserAdminPage.css";
+import { Link } from "react-router";
 
 export const UserAdminPage = () => {
 
@@ -31,6 +32,7 @@ export const UserAdminPage = () => {
 
     return (
         <div className="admin-container">
+            <p className="breadcrumb"><Link to="/administracion">Panel </Link>/ Usuarios</p>
             <h2 className="admin-title">Todos los usuarios</h2>
 
             <div className="admin-grid">

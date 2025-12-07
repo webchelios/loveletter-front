@@ -1,12 +1,22 @@
 .home-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding-top: 4rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     animation: entry 1s ease;
+    background-color: black;
+    color: white;
+}
+
+.home-background {
+    background-image: url('./images/pexels-tuurt-391535.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35rem;
 }
 
 .home-title {
@@ -18,12 +28,13 @@
 .home-container p {
     font-size: 1.3rem;
     line-height: 1.8rem;
-    color: #444;
+    color: white;
 }
 
 .home-container a {
+    background-color: white;
     display: inline-block;
-    margin: 0.5rem auto;
+    margin: 1.5rem 1rem;
     font-size: 1.1rem;
     text-decoration: none;
     padding: 0.8rem 1.6rem;

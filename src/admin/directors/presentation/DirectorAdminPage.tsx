@@ -3,6 +3,7 @@ import type { Director } from "../../../directors/interfaces/Director.interface"
 import { getDirectors } from "../../../directors/actions/get-directors"
 import { DirectorsList } from "../components/DirectorsList"
 import './DirectorAdminPage.css'
+import { Link } from "react-router"
 
 export const DirectorAdminPage = () => {
 
@@ -23,7 +24,7 @@ export const DirectorAdminPage = () => {
 
     return (
         <div className="director-admin-page">
-
+            <p className="breadcrumb"><Link to="/administracion">Panel </Link>/ Directores</p>
             <h1 className="director-admin-title">Listado de Directores</h1>
 
             <div className="director-admin-list-wrapper">
