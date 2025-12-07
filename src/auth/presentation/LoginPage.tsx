@@ -62,30 +62,34 @@ export const LoginPage = () => {
     };
 
     return (
-        <form className="login-form" onSubmit={onSubmit}>
-            <div>
-                <input
-                    id="email"
-                    type="email"
-                    placeholder="Ingresar email"
-                    value={email}
-                    onChange={onChangeEmail}
-                />
-                {errors.email && <p className="error">{errors.email}</p>}
-            </div>
+        <>
+            <h1 className="auth-title">Ingresar</h1>
+            <form className="login-form" onSubmit={onSubmit}>
+                <div>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Ingresar email"
+                        value={email}
+                        onChange={onChangeEmail}
+                    />
+                    {errors.email && <p className="error">{errors.email}</p>}
+                </div>
 
-            <div>
-                <input
-                    id="password"
-                    type="password"
-                    placeholder="Ingresar contraseña"
-                    value={password}
-                    onChange={onChangePassword}
-                />
-                {errors.password && <p className="error">{errors.password}</p>}
-            </div>
+                <div>
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Ingresar contraseña"
+                        value={password}
+                        onChange={onChangePassword}
+                    />
+                    {errors.password && <p className="error">{errors.password}</p>}
+                </div>
 
-            <button type="submit">Iniciar sesión</button>
-        </form>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+
+        </>
     );
 };

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../auth/context/AuthContext";
 import { deleteMovie } from "../actions/delete-movie";
+import './MoviesList.css'
 
 interface Props {
     _id: string;
@@ -21,20 +22,17 @@ export const MoviesList = ({ _id, title, synopsis, year, director, status, onDel
         onDelete(_id)
     }
 
-
     return (
-        status &&
+        status && (
+            <div className="movie-admin-item">
+                <p><strong>Título:</strong> {title}</p>
+                <p><strong>Sinopsis:</strong> {synopsis}</p>
+                <p><strong>Año:</strong> {year}</p>
+                <p><strong>Director:</strong> {director}</p>
 
-        <div style={{ border: '1px solid black', margin: '1rem', padding: '1rem' }}>
-            <p>Título: {title}</p>
-            <p>Sinopsis: {synopsis}</p>
-            <p>Año: {year}</p>
-            <p>Director: {director}</p>
+                <button className="movie-admin-button" onClick={handleDeleteMovie}>Eliminar</button>
 
-            <button onClick={handleDeleteMovie}>Eliminar</button>
-
-
-        </div>
-
+            </div>
+        )
     )
 }

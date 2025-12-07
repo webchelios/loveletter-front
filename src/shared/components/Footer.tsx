@@ -1,10 +1,9 @@
 import './Footer.css'
 
 export const Footer = () => {
-
     return (
-        <footer>
+        <footer className="footer">
             <p>Loveletter {new Date().getFullYear()}</p>
         </footer>
-    )
-}
+    );
+};

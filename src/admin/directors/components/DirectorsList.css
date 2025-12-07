@@ -1,0 +1,28 @@
+ .director-admin-card {
+     border: 2px solid #b40000;
+     padding: 1rem;
+     border-radius: 10px;
+     background: #ffe5e5;
+     color: #4a0000;
+     max-width: 400px;
+     box-shadow: 0 0 10px rgba(180, 0, 0, 0.2);
+ }
+
+ .director-admin-card p {
+     margin: 0.4rem 0;
+ }
+
+ .director-admin-btn-danger {
+     margin-top: 0.8rem;
+     background: #b40000;
+     padding: 0.5rem 1rem;
+     color: #fff;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     transition: 0.2s;
+ }
+
+ .director-admin-btn-danger:hover {
+     background: #ff3333;
+ }

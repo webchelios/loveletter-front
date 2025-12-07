@@ -1,0 +1,16 @@
+.director-admin-page {
+    padding: 20px;
+}
+
+.director-admin-title {
+    color: #b40000;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 10px;
+}
+
+.director-admin-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

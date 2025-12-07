@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../auth/context/AuthContext";
 import { deleteDirector } from "../actions/delete-director";
+import './DirectorsList.css'
 
 interface Props {
     _id: string;
@@ -20,20 +21,21 @@ export const DirectorsList = ({ _id, name, surname, age, status, onDelete }: Pro
         onDelete(_id)
     }
 
-
     return (
-        status &&
+        status && (
 
-        <div style={{ border: '1px solid black', margin: '1rem', padding: '1rem' }}>
-            <p>Nombre: {name}</p>
-            <p>Apellido: {surname}</p>
-            <p>Edad: {age}</p>
+            <div className="director-admin-card">
+
+                <p><strong>Nombre:</strong> {name}</p>
+                <p><strong>Apellido:</strong> {surname}</p>
+                <p><strong>Edad:</strong> {age}</p>
+
+                <button className="director-admin-btn-danger" onClick={handleDeleteDirector}>
+                    Eliminar
+                </button>
 
 
-            <button onClick={handleDeleteDirector}>Eliminar</button>
-
-
-        </div>
-
+            </div>
+        )
     )
 }

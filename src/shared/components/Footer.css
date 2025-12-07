@@ -1,4 +1,15 @@
 footer {
     margin-top: auto;
     text-align: center;
+
+    padding: 1.5rem 0;
+    background-color: #111;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-top: 2px solid #222;
+}
+
+footer p {
+    margin: 0;
 }

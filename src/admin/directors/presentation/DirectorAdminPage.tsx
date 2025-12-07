@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import type { Director } from "../../../directors/interfaces/Director.interface"
 import { getDirectors } from "../../../directors/actions/get-directors"
 import { DirectorsList } from "../components/DirectorsList"
+import './DirectorAdminPage.css'
 
 export const DirectorAdminPage = () => {
 
@@ -21,13 +22,16 @@ export const DirectorAdminPage = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Listado</h1>
-            {
-                directors.map((director) => (
+        <div className="director-admin-page">
+
+            <h1 className="director-admin-title">Listado de Directores</h1>
+
+            <div className="director-admin-list-wrapper">
+                {directors.map((director) => (
                     <DirectorsList key={director._id} onDelete={handleDelete} {...director} />
-                ))
-            }
+                ))}
+            </div>
+
         </div>
     )
 }

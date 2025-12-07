@@ -106,7 +106,7 @@ export const RegisterPage = () => {
 
     return (
         <>
-            <h1>Register</h1>
+            <h1 className="auth-title">Registro</h1>
 
             <form className="register-form" onSubmit={onSubmit}>
                 <input
