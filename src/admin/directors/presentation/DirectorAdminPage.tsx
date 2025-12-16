@@ -28,6 +28,9 @@ export const DirectorAdminPage = () => {
             <h1 className="director-admin-title">Listado de Directores</h1>
 
             <div className="director-admin-list-wrapper">
+                {directors.length === 0 && (
+                    <p>No hay directores</p>
+                )}
                 {directors.map((director) => (
                     <DirectorsList key={director._id} onDelete={handleDelete} {...director} />
                 ))}

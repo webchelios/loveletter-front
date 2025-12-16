@@ -1,12 +1,30 @@
+.auth-register-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 4rem;
+    margin: 5rem;
+    box-shadow: 1px 1px 10px grey;
+    border-radius: 3rem;
+}
+
+.auth-register-image img {
+    border-radius: 3rem 0 0 3rem;
+    display: block;
+    width: auto;
+    height: 35rem;
+
+}
+
 .auth-title {
     text-align: center;
     margin-top: 1rem;
 }
 
 .register-form {
-    max-width: 350px;
-    margin: 20px auto;
-    padding: 20px;
+    width: 400px;
+    margin: 4rem;
+    padding: 2rem;
     background: #fafafa;
     border-radius: 8px;
     display: flex;
@@ -54,4 +72,24 @@
         transform: scale(1);
         opacity: 1;
     }
+}
+
+@media screen and (max-width: 1540px) {
+    .auth-register-image {
+        display: none;
+    }
+
+    .auth-register-container {
+        display: block;
+
+        box-shadow: none;
+
+    }
+
+    .register-form {
+
+        margin: 4rem auto;
+
+    }
+
 }

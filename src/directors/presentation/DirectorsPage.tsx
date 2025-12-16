@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getDirectors } from "../actions/get-directors";
 import { searchDirectors } from "../actions/search-directors";
 import { SearchDirector } from "../components/SearchDirector";
@@ -6,11 +6,14 @@ import { DirectorList } from "../components/DirectorList";
 import type { Director } from "../interfaces/Director.interface";
 import { Link } from "react-router";
 import './DirectorsPage.css'
+import { AuthContext } from "../../auth/context/AuthContext";
 
 
 export const DirectorsPage = () => {
     const [directors, setDirectors] = useState<Director[]>([]);
     const [error, setError] = useState<string>("")
+
+    const { authUser } = useContext(AuthContext)
 
     const fetchDirectors = async () => {
         try {
@@ -44,7 +47,9 @@ export const DirectorsPage = () => {
         <div className="directors-container">
             <h1>Directores</h1>
 
-            <Link to="/crear-director">Crear director</Link>
+            {
+                authUser && <Link to="/crear-director">Crear director</Link>
+            }
 
             <SearchDirector searchDirector={searchDirector} />
 

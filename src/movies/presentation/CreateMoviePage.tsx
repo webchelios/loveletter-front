@@ -58,15 +58,19 @@ export const CreateMoviePage = () => {
     };
 
     return (
-        <form className="create-movie-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Título" onChange={handleOnChangeTitle} />
-            <input type="text" placeholder="Sinopsis" onChange={handleOnChangeSynopsis} />
-            <input type="number" placeholder="Año" onChange={handleOnChangeYear} />
-            <input type="text" placeholder="Director" onChange={handleOnChangeDirector} />
+        <>
+            <h1 className="movie-h1">Crear una película</h1>
+            <form className="create-movie-form" onSubmit={handleSubmit}>
+                <input type="text" placeholder="Título" onChange={handleOnChangeTitle} />
+                <input type="text" placeholder="Sinopsis" onChange={handleOnChangeSynopsis} />
+                <input type="number" placeholder="Año" onChange={handleOnChangeYear} />
+                <input type="text" placeholder="Director" onChange={handleOnChangeDirector} />
 
-            {error && <p className="error">{error}</p>}
+                {error && <p className="error">{error}</p>}
 
-            <button type="submit">Crear</button>
-        </form>
+                <button type="submit">Crear</button>
+            </form>
+
+        </>
     );
 };

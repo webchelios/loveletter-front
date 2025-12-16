@@ -10,22 +10,22 @@ export const HomePage = () => {
     return (
         <div className="home-container">
             <h1 className="home-title">¡Una carta web de amor al cine!</h1>
-            <div className="home-background">
 
 
-                {
-                    authUser
-                        ? <>
-                            <p>¡Bienvenido {authUser.username}! Ayudanos a contribuir a nuestra base de datos</p>
-                            <Link to="/crear-director">Crear director</Link>
-                            <Link to="/crear-pelicula">Crear película</Link>
-                        </>
-                        : <>
-                            <p>Registrate para comenzar a explorar</p>
-                            <Link to="/registrarse">Registrarse</Link>
-                        </>
-                }
-            </div>
+
+            {
+                authUser
+                    ? <>
+                        <p>¡Bienvenido {authUser.username}! Ayudanos a contribuir a nuestra base de datos</p>
+                        <Link to="/crear-director">Crear director</Link>
+                        <Link to="/crear-pelicula">Crear película</Link>
+                    </>
+                    : <>
+                        <p>Registrate para comenzar a crear</p>
+                        <Link to="/registrarse">Registrarse</Link>
+                    </>
+            }
+
         </div>
     )
 }

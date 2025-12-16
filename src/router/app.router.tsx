@@ -7,7 +7,6 @@ import { LoginPage } from "../auth/presentation/LoginPage";
 import { RegisterPage } from "../auth/presentation/RegisterPage";
 import { DirectorsPage } from "../directors/presentation/DirectorsPage";
 import { UsersPage } from "../auth/presentation/UsersPage";
-
 import { UserAdminPage } from "../admin/users/presentation/UserAdminPage";
 import { EditUserPage } from "../admin/users/presentation/EditUserPage";
 import { MovieAdminPage } from "../admin/movies/presentation/MovieAdminPage";

@@ -1,11 +1,27 @@
+.auth-login-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 4rem;
+    margin: 5rem;
+    box-shadow: 1px 1px 10px grey;
+    border-radius: 3rem;
+}
+
+
+.auth-login-image img {
+    border-radius: 3rem 0 0 3rem;
+    display: block;
+}
+
 .auth-title {
     text-align: center;
-    margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 .login-form {
-    max-width: 400px;
-    margin: 3rem auto;
+    width: 400px;
+    margin: 4rem;
     padding: 2rem;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
@@ -56,6 +72,9 @@
     margin-top: 0.3rem;
 }
 
+
+
+
 @keyframes pop {
     0% {
         transform: scale(0);
@@ -66,4 +85,24 @@
         transform: scale(1);
         opacity: 1;
     }
+}
+
+@media screen and (max-width: 1540px) {
+    .auth-login-image {
+        display: none;
+    }
+
+    .auth-login-container {
+        display: block;
+
+        box-shadow: none;
+
+    }
+
+    .login-form {
+
+        margin: 4rem auto;
+
+    }
+
 }

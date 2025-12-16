@@ -105,44 +105,50 @@ export const RegisterPage = () => {
     };
 
     return (
-        <>
-            <h1 className="auth-title">Registro</h1>
+        <div className="auth-register-container">
+            <div>
+                <h1 className="auth-title">Registro</h1>
 
-            <form className="register-form" onSubmit={onSubmit}>
-                <input
-                    type="email"
-                    placeholder="Ingresar email"
-                    value={email}
-                    onChange={onChangeEmail}
-                />
-                {errors.email && <p className="error">{errors.email}</p>}
+                <form className="register-form" onSubmit={onSubmit}>
+                    <input
+                        type="email"
+                        placeholder="Ingresar email"
+                        value={email}
+                        onChange={onChangeEmail}
+                    />
+                    {errors.email && <p className="error">{errors.email}</p>}
 
-                <input
-                    type="password"
-                    placeholder="Ingresar contraseña"
-                    value={password}
-                    onChange={onChangePassword}
-                />
-                {errors.password && <p className="error">{errors.password}</p>}
+                    <input
+                        type="password"
+                        placeholder="Ingresar contraseña"
+                        value={password}
+                        onChange={onChangePassword}
+                    />
+                    {errors.password && <p className="error">{errors.password}</p>}
 
-                <input
-                    type="text"
-                    placeholder="Ingresar nombre y apellido"
-                    value={name}
-                    onChange={onChangeName}
-                />
-                {errors.name && <p className="error">{errors.name}</p>}
+                    <input
+                        type="text"
+                        placeholder="Ingresar nombre y apellido"
+                        value={name}
+                        onChange={onChangeName}
+                    />
+                    {errors.name && <p className="error">{errors.name}</p>}
 
-                <input
-                    type="text"
-                    placeholder="Crear nombre de usuario"
-                    value={username}
-                    onChange={onChangeUsername}
-                />
-                {errors.username && <p className="error">{errors.username}</p>}
+                    <input
+                        type="text"
+                        placeholder="Crear nombre de usuario"
+                        value={username}
+                        onChange={onChangeUsername}
+                    />
+                    {errors.username && <p className="error">{errors.username}</p>}
 
-                <button type="submit">Registrarse</button>
-            </form>
-        </>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+
+            <div className="auth-register-image">
+                <img src="./images/m.webp" alt="" />
+            </div>
+        </div>
     );
 };

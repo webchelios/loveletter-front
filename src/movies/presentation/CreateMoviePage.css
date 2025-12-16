@@ -1,3 +1,8 @@
+.movie-h1 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .create-movie-form {
     display: flex;
     flex-direction: column;

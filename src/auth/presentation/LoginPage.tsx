@@ -63,32 +63,40 @@ export const LoginPage = () => {
 
     return (
         <>
-            <h1 className="auth-title">Ingresar</h1>
-            <form className="login-form" onSubmit={onSubmit}>
+            <div className="auth-login-container">
                 <div>
-                    <input
-                        id="email"
-                        type="email"
-                        placeholder="Ingresar email"
-                        value={email}
-                        onChange={onChangeEmail}
-                    />
-                    {errors.email && <p className="error">{errors.email}</p>}
+                    <h1 className="auth-title">Ingresar</h1>
+                    <form className="login-form" onSubmit={onSubmit}>
+                        <div>
+                            <input
+                                id="email"
+                                type="email"
+                                placeholder="Ingresar email"
+                                value={email}
+                                onChange={onChangeEmail}
+                            />
+                            {errors.email && <p className="error">{errors.email}</p>}
+                        </div>
+
+                        <div>
+                            <input
+                                id="password"
+                                type="password"
+                                placeholder="Ingresar contraseña"
+                                value={password}
+                                onChange={onChangePassword}
+                            />
+                            {errors.password && <p className="error">{errors.password}</p>}
+                        </div>
+
+                        <button type="submit">Iniciar sesión</button>
+                    </form>
+                </div>
+                <div className="auth-login-image">
+                    <img src="./images/la-noche-del-cazador.jpg" alt="" />
                 </div>
 
-                <div>
-                    <input
-                        id="password"
-                        type="password"
-                        placeholder="Ingresar contraseña"
-                        value={password}
-                        onChange={onChangePassword}
-                    />
-                    {errors.password && <p className="error">{errors.password}</p>}
-                </div>
-
-                <button type="submit">Iniciar sesión</button>
-            </form>
+            </div>
 
         </>
     );

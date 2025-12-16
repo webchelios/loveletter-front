@@ -47,14 +47,18 @@ export const CreateDirectorPage = () => {
     };
 
     return (
-        <form className="create-director-form" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Nombre" onChange={handleOnChangeName} />
-            <input type="text" placeholder="Apellido" onChange={handleOnChangeSurname} />
-            <input type="number" placeholder="Edad" onChange={handleOnChangeAge} />
+        <>
+            <h1 className="director-h1">Crear un director</h1>
+            <form className="create-director-form" onSubmit={handleSubmit}>
+                <input type="text" placeholder="Nombre" onChange={handleOnChangeName} />
+                <input type="text" placeholder="Apellido" onChange={handleOnChangeSurname} />
+                <input type="number" placeholder="Edad" onChange={handleOnChangeAge} />
 
-            {error && <p className="error-message">{error}</p>}
+                {error && <p className="error-message">{error}</p>}
 
-            <button type="submit">Crear</button>
-        </form>
+                <button type="submit">Crear</button>
+            </form>
+
+        </>
     );
 };
